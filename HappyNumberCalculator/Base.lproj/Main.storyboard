@@ -1,14 +1,33 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="16A304a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cGA-R4-wwJ">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="lQd-xQ-tfF">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4c2-vM-csq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController navigationBarHidden="YES" id="cGA-R4-wwJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QRN-HD-MGK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="1TW-JU-gb7"/>
+                        <segue destination="SFp-1n-ReE" kind="presentation" identifier="ShowOutput" id="5xU-6Z-3CI"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-647" y="140"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HappyNumberCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +35,102 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjV-86-Xnn">
+                                <state key="normal" title="Calculate"/>
+                                <connections>
+                                    <action selector="calculatePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XGB-yU-iao"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter an upper bound for calculation:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCg-EQ-5AP">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R7a-wa-vME">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="ObL-1u-0q5"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <progressView opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ArS-E9-JTo"/>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="lCg-EQ-5AP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5zS-40-jup"/>
+                            <constraint firstItem="ArS-E9-JTo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="FtQ-oE-akg"/>
+                            <constraint firstItem="mjV-86-Xnn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Nl1-FP-CEv"/>
+                            <constraint firstItem="mjV-86-Xnn" firstAttribute="top" secondItem="R7a-wa-vME" secondAttribute="bottom" constant="43" id="XNl-6f-aV2"/>
+                            <constraint firstItem="R7a-wa-vME" firstAttribute="centerX" secondItem="mjV-86-Xnn" secondAttribute="centerX" id="aGx-q8-WQp"/>
+                            <constraint firstItem="lCg-EQ-5AP" firstAttribute="centerX" secondItem="R7a-wa-vME" secondAttribute="centerX" id="cnX-Bl-Jdy"/>
+                            <constraint firstItem="R7a-wa-vME" firstAttribute="top" secondItem="lCg-EQ-5AP" secondAttribute="bottom" constant="22" id="rTn-J2-W0y"/>
+                            <constraint firstItem="ArS-E9-JTo" firstAttribute="top" secondItem="mjV-86-Xnn" secondAttribute="bottom" constant="18" id="v7a-HQ-kgZ"/>
+                            <constraint firstItem="mjV-86-Xnn" firstAttribute="centerX" secondItem="ArS-E9-JTo" secondAttribute="centerX" id="veR-zc-rO2"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="BlH-hp-7e1" appends="YES" id="aRY-32-xw7"/>
+                        </connections>
                     </view>
+                    <navigationItem key="navigationItem" id="TAJ-nY-tHx"/>
+                    <connections>
+                        <outlet property="calculateBtn" destination="mjV-86-Xnn" id="rwp-jY-3YU"/>
+                        <outlet property="inputBox" destination="R7a-wa-vME" id="EcX-35-etf"/>
+                        <outlet property="progBar" destination="ArS-E9-JTo" id="iCc-Qi-tzi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="BlH-hp-7e1">
+                    <connections>
+                        <action selector="tapOutside:" destination="BYZ-38-t0r" id="Tit-vP-CvJ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="135.19999999999999" y="139.880059970015"/>
+        </scene>
+        <!--OutputView-->
+        <scene sceneID="5AK-TS-pfh">
+            <objects>
+                <viewController title="OutputView" id="SFp-1n-ReE" customClass="OutputViewController" customModule="HappyNumberCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="l8c-rZ-Zp9"/>
+                        <viewControllerLayoutGuide type="bottom" id="DPJ-rg-bo8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Y14-ZY-Ret">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ueu-xG-OO7">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZbJ-lH-IK7">
+                                <state key="normal" title="Close"/>
+                                <connections>
+                                    <action selector="closePressed:" destination="SFp-1n-ReE" eventType="touchUpInside" id="06r-sf-PEI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ueu-xG-OO7" firstAttribute="trailing" secondItem="Y14-ZY-Ret" secondAttribute="trailingMargin" id="1OZ-Tz-vI1"/>
+                            <constraint firstItem="ueu-xG-OO7" firstAttribute="centerX" secondItem="ZbJ-lH-IK7" secondAttribute="centerX" id="5PJ-cZ-o8k"/>
+                            <constraint firstAttribute="bottom" secondItem="ZbJ-lH-IK7" secondAttribute="bottom" constant="20" symbolic="YES" id="OCW-tu-qkS"/>
+                            <constraint firstItem="ZbJ-lH-IK7" firstAttribute="top" secondItem="ueu-xG-OO7" secondAttribute="bottom" constant="33" id="PWI-aI-fjH"/>
+                            <constraint firstItem="ueu-xG-OO7" firstAttribute="top" secondItem="l8c-rZ-Zp9" secondAttribute="bottom" constant="8" symbolic="YES" id="nBX-Ey-BW3"/>
+                            <constraint firstItem="ueu-xG-OO7" firstAttribute="leading" secondItem="Y14-ZY-Ret" secondAttribute="leadingMargin" id="wpZ-Zn-l4R"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="outputBox" destination="ueu-xG-OO7" id="KgX-AA-1oN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m1k-Co-GKE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="901" y="140"/>
         </scene>
     </scenes>
 </document>

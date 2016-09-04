@@ -13,6 +13,7 @@
 		9D61A9D81D77C5D500150E25 /* HappyNumberCalculator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9D61A9D61D77C5D500150E25 /* HappyNumberCalculator.xcdatamodeld */; };
 		9D61A9DA1D77C5D500150E25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D61A9D91D77C5D500150E25 /* Assets.xcassets */; };
 		9D61A9DD1D77C5D500150E25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D61A9DB1D77C5D500150E25 /* LaunchScreen.storyboard */; };
+		9D61A9E51D77DE5000150E25 /* OutputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D61A9E41D77DE5000150E25 /* OutputViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		9D61A9D91D77C5D500150E25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D61A9DC1D77C5D500150E25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D61A9DE1D77C5D500150E25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D61A9E41D77DE5000150E25 /* OutputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutputViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		9D61A9CE1D77C5D500150E25 /* HappyNumberCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				9D61A9E41D77DE5000150E25 /* OutputViewController.swift */,
 				9D61A9CF1D77C5D500150E25 /* AppDelegate.swift */,
 				9D61A9D11D77C5D500150E25 /* ViewController.swift */,
 				9D61A9D31D77C5D500150E25 /* Main.storyboard */,
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D61A9D81D77C5D500150E25 /* HappyNumberCalculator.xcdatamodeld in Sources */,
+				9D61A9E51D77DE5000150E25 /* OutputViewController.swift in Sources */,
 				9D61A9D21D77C5D500150E25 /* ViewController.swift in Sources */,
 				9D61A9D01D77C5D500150E25 /* AppDelegate.swift in Sources */,
 			);
